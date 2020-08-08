@@ -20,7 +20,7 @@ const DUMMY_PLACES = [
   {
     id: 'p2',
     title: 'CN Tower',
-    description: 'In the 6ix',
+    description: 'ovo',
     imageUrl:
       'https://media.blogto.com/articles/2020624-cn-tower-toronto-2.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70',
     address: '290 Bremner Blvd, Toronto, ON M5V 3L9',
