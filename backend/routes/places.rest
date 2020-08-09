@@ -6,14 +6,10 @@ POST http://localhost:5000/api/places
 Content-Type: application/json
 
 {
-  "title": "",
+  "title": "New York Stock Exchange",
   "description": "Where the money lives",
   "creator": "u1",
-  "address": "11 Wall St, New York, NY 10005, United States",
-  "coordinates": {
-    "lat": 40.706881,
-    "lng": -74.0134541
-  }
+  "address": "11 Wall St, New York, NY 10005, United States"
 }
 
 ###
