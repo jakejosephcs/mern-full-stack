@@ -1,4 +1,4 @@
-GET http://localhost:5000/api/places/user/u2
+GET http://localhost:5000/api/places/p1
 
 ###
 
@@ -6,7 +6,7 @@ POST http://localhost:5000/api/places
 Content-Type: application/json
 
 {
-  "title": "New York Stock Exchange",
+  "title": "",
   "description": "Where the money lives",
   "creator": "u1",
   "address": "11 Wall St, New York, NY 10005, United States",
