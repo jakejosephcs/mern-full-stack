@@ -8,7 +8,8 @@ Content-Type: application/json
 {
   "name": "Vanessa",
   "email": "test@testt.com",
-  "password": "testing"
+  "password": "testing",
+  "places": "p1"
 }
 ###
 
@@ -16,7 +17,7 @@ POST http://localhost:5000/api/users/login
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
-  "password": "testers"
+  "email": "test@testt.com",
+  "password": "testing"
 }
 
