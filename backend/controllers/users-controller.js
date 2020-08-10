@@ -35,7 +35,7 @@ const signup = async (req, res, next) => {
     );
   }
 
-  const { name, email, password, places } = req.body;
+  const { name, email, password } = req.body;
 
   let exisitingUser;
   try {
@@ -58,7 +58,7 @@ const signup = async (req, res, next) => {
     image:
       'https://media.cntraveler.com/photos/5b2c0684a98055277ea83e26/4:5/w_767,c_limit/CN-Tower_GettyImages-615764386.jpg',
     password,
-    places,
+    places: [],
   });
 
   try {
