@@ -6,10 +6,10 @@ POST http://localhost:5000/api/users/signup
 Content-Type: application/json
 
 {
-  "name": "Vanessa",
-  "email": "test@testt.com",
-  "password": "testing",
-  "places": "p1"
+  "name": "Jake",
+  "email": "test@testing.com",
+  "password": "testers",
+  "places": "p2"
 }
 ###
 
