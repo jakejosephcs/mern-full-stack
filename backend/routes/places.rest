@@ -6,22 +6,22 @@ POST http://localhost:5000/api/places
 Content-Type: application/json
 
 {
-  "title": "New York Stock Exchange",
-  "description": "Where the money lives",
-  "creator": "u1",
-  "address": "11 Wall St, New York, NY 10005, United States"
+  "title": "Empire State Building",
+  "description": "A very famous building in New York",
+  "address": "20 W 34th St, New York, NY 10001, United States",
+  "creator": "u2"
 }
 
 ###
 
-DELETE http://localhost:5000/api/places/p1
+DELETE http://localhost:5000/api/places/5f308f7125190d2d8505cd6e
 
 ###
 
-PATCH http://localhost:5000/api/places/p1
+PATCH http://localhost:5000/api/places/5f308f7125190d2d8505cd6e
 Content-Type: application/json
 
 {
-  "title": "Empire State of Mind" ,
-  "description": "A good song"
+  "title": "The Empire State Building" ,
+  "description": "A great building"
 }
