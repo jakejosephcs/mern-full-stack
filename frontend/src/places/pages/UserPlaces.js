@@ -1,41 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import PlaceList from '../components/PlaceList';
-
-const DUMMY_PLACES = [
-  {
-    id: 'p1',
-    title: 'CN Tower',
-    description: 'In the 6ix',
-    imageUrl:
-      'https://media.blogto.com/articles/2020624-cn-tower-toronto-2.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70',
-    address: '290 Bremner Blvd, Toronto, ON M5V 3L9',
-    location: {
-      lat: 43.6425662,
-      lng: -79.3892508,
-    },
-    creator: 'u1',
-  },
-  {
-    id: 'p2',
-    title: 'CN Tower',
-    description: 'ovo',
-    imageUrl:
-      'https://media.blogto.com/articles/2020624-cn-tower-toronto-2.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70',
-    address: '290 Bremner Blvd, Toronto, ON M5V 3L9',
-    location: {
-      lat: 43.6425662,
-      lng: -79.3892508,
-    },
-    creator: 'u2',
-  },
-];
+import ErrorModal from '../../shared/components/UIElements/ErrorModal';
+import LoadingSpinner from '../../shared/components/UIElements/ErrorModal';
+import { useHttpClient } from '../../shared/hooks/http-hook';
 
 function UserPlaces() {
+  const [loadedPlaces, setLoadedPlaces] = useState();
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+
   const userId = useParams().userId;
-  const loadedPlaces = DUMMY_PLACES.filter(place => place.creator === userId);
-  return <PlaceList items={loadedPlaces} />;
+
+  useEffect(() => {
+    const fetchPlaces = async () => {
+      try {
+        const responseData = await sendRequest(
+          `http://localhost:5000/api/places/user/${userId}`
+        );
+        setLoadedPlaces(responseData.places);
+      } catch (error) {}
+    };
+    fetchPlaces();
+  }, [sendRequest, userId]);
+
+  return (
+    <>
+      <ErrorModal error={error} onClear={clearError} />
+      {isLoading && (
+        <div className='center'>
+          <LoadingSpinner />
+        </div>
+      )}
+      {!isLoading && loadedPlaces && <PlaceList items={loadedPlaces} />}
+    </>
+  );
 }
 
 export default UserPlaces;
