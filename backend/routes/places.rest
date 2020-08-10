@@ -1,4 +1,4 @@
-GET http://localhost:5000/api/places/p1
+GET http://localhost:5000/api/places/user/6f30b8ead2fe6c3dd65b67fd
 
 ###
 
@@ -6,15 +6,15 @@ POST http://localhost:5000/api/places
 Content-Type: application/json
 
 {
-  "title": "Empire State Building",
+  "title": "CN Tower",
   "description": "A very famous building in New York",
-  "address": "20 W 34th St, New York, NY 10001, United States",
-  "creator": "7f30b8ead2fe6c3dd65b67fd"
+  "address": "20 W 34th St, New ",
+  "creator": "5f30b8ead2fe6c3dd65b67fd"
 }
 
 ###
 
-DELETE http://localhost:5000/api/places/4f308f7125190d2d8505cd6e
+DELETE http://localhost:5000/api/places/5f30b93dd2fe6c3dd65b67fe
 
 ###
 
