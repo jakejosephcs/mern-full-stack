@@ -1,3 +1,4 @@
-node_modules/
+/node_modules
 .DS_Store
-./routes/places.rest
+/routes/places.rest
+/routes/users.rest
